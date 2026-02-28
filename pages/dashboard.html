@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FocusBharat — Dashboard</title>
+  <!--
+    This file represents the Dashboard page section.
+    All page sections are assembled in ../index.html (SPA approach).
+    CSS lives in ../css/ and JS lives in ../js/
+
+    CSS used:    ../css/animations.css, ../css/main.css
+    JS used:     ../js/main.js
+    Page ID:     #page-dashboard  (in index.html)
+    Sidebar IDs: dash-overview, dash-plan, dash-progress,
+                 dash-alerts, dash-settings, dash-feedback
+  -->
+  <script>
+    // Redirect to main app, landing on dashboard
+    sessionStorage.setItem('startPage', 'dashboard');
+    window.location.href = '../index.html';
+  </script>
+</head>
+<body>Loading dashboard...</body>
+</html>

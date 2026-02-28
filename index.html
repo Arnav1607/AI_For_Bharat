@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FocusBharat — AI-Powered Focus Platform for Indian Students</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<!-- Shared styles -->
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/main.css">
+<!-- Page-specific styles -->
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/onboarding.css">
+<link rel="stylesheet" href="css/ai-loading.css">
+<link rel="stylesheet" href="css/results.css">
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="grain"></div>
+<div id="toast-container"></div>
+
+<!-- ═══════════════════════════════════
+     PAGE 1: LANDING
+═══════════════════════════════════ -->
+<div id="page-landing" class="page active">
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand" onclick="navigate('landing')">
+      <div class="nav-logo">🧠</div>
+      <span class="nav-brand-name">Focus<span>Bharat</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#features" class="nav-link">Features</a>
+      <a href="#how-it-works" class="nav-link">How It Works</a>
+      <a href="#ai-section" class="nav-link">AI Technology</a>
+      <a href="#testimonials" class="nav-link">Stories</a>
+      <button class="nav-cta" onclick="navigate('login')">Get Started Free →</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-eyebrow">🇮🇳 Built for Indian Students &nbsp;·&nbsp; Powered by Amazon Bedrock AI</div>
+        <h1 class="hero-title">Your Focus.<br><span class="gradient-text">Reimagined by AI.</span></h1>
+        <p class="hero-subtitle">FocusBharat uses Generative AI to analyze your unique digital habits, identify your real productivity blockers, and create a personalized plan that actually works.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" onclick="navigate('login')">Start Free — No Credit Card ✦</button>
+          <button class="btn btn-ghost btn-lg" onclick="scrollToSection('how-it-works')">See How It Works</button>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-avatars">
+            <div class="trust-avatar">PS</div><div class="trust-avatar">AK</div>
+            <div class="trust-avatar">RV</div><div class="trust-avatar">MN</div>
+          </div>
+          <div class="trust-text"><strong>4,800+ students</strong> already boosting focus</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div style="position:relative">
+          <div class="dashboard-mockup">
+            <div class="mockup-header">
+              <div class="mockup-dots"><span></span><span></span><span></span></div>
+              <div class="mockup-title">FocusBharat Dashboard</div>
+              <div class="mockup-live">Live</div>
+            </div>
+            <div class="mock-stats">
+              <div class="mock-stat"><div class="mock-stat-val orange">72</div><div class="mock-stat-label">Focus Score</div></div>
+              <div class="mock-stat"><div class="mock-stat-val green">+24%</div><div class="mock-stat-label">Productivity</div></div>
+              <div class="mock-stat"><div class="mock-stat-val violet">5.2h</div><div class="mock-stat-label">Study Time</div></div>
+            </div>
+            <div class="mock-bar-wrap"><div class="mock-bar-label"><span>Deep Work</span><span>72%</span></div><div class="mock-bar-track"><div class="mock-bar-fill bar-orange"></div></div></div>
+            <div class="mock-bar-wrap"><div class="mock-bar-label"><span>Social Media</span><span>58%</span></div><div class="mock-bar-track"><div class="mock-bar-fill bar-violet"></div></div></div>
+            <div class="mock-bar-wrap"><div class="mock-bar-label"><span>Study Goals</span><span>85%</span></div><div class="mock-bar-track"><div class="mock-bar-fill bar-green"></div></div></div>
+            <div class="mock-ai-box">
+              <div class="mock-ai-icon">🤖</div>
+              <div class="mock-ai-text"><strong>AI Insight</strong>Your peak focus window is 7–9 AM. Schedule deep work now!</div>
+            </div>
+          </div>
+          <div class="float-card float-card-1"><div class="float-card-icon">⚡</div><div><div class="float-card-label">Productivity Boost</div><div class="float-card-val">+38% this week</div></div></div>
+          <div class="float-card float-card-2"><div class="float-card-icon">🎯</div><div><div class="float-card-label">AI Plan Active</div><div class="float-card-val">Day 14 / 30</div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div style="border-top:1px solid var(--border)">
+    <div class="stats-strip">
+      <div class="stat-item"><div class="stat-num" data-target="4.5">0</div><div class="stat-desc">Avg. hours on social media daily by Indian students</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="68" data-suffix="%">0</div><div class="stat-desc">Students struggle to maintain focus during study</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="85" data-suffix="%">0</div><div class="stat-desc">Improvement in focus with our AI personalization</div></div>
+      <div class="stat-item"><div class="stat-num" data-target="4800" data-suffix="+">0</div><div class="stat-desc">Students already on their AI-powered focus journey</div></div>
+    </div>
+  </div>
+
+  <!-- PROBLEM SECTION -->
+  <section id="problems">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">The Problem</span>
+        <h2 class="section-title">Why Indian Students <span class="gradient-text">Struggle with Focus</span></h2>
+        <p class="section-subtitle">Generic tools fail because they treat every student the same. You're not.</p>
+      </div>
+      <div class="problem-grid">
+        <div class="problem-card animate-fade-up delay-1"><div class="problem-emoji">📱</div><h3>Endless Distractions</h3><p>Social media, gaming, and OTT platforms constantly compete for attention during critical study hours.</p></div>
+        <div class="problem-card animate-fade-up delay-2"><div class="problem-emoji">🔄</div><h3>One-Size-Fits-All</h3><p>Rigid apps with generic rules that don't adapt to your unique schedule, habits, or learning style.</p></div>
+        <div class="problem-card animate-fade-up delay-3"><div class="problem-emoji">📊</div><h3>No Personalization</h3><p>Static tools that can't learn from your behavior or provide genuinely intelligent recommendations.</p></div>
+        <div class="problem-card animate-fade-up delay-4"><div class="problem-emoji">⏰</div><h3>Poor Time Awareness</h3><p>Difficulty identifying your true peak hours and structuring study time around your natural rhythms.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" style="background:rgba(255,255,255,0.015);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">How It Works</span>
+        <h2 class="section-title">From Data to <span class="gradient-text">Personalized Plan</span></h2>
+        <p class="section-subtitle">Four simple steps powered by Amazon Bedrock AI foundation models.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-card animate-fade-up delay-1"><div class="how-num">1</div><h3>Share Your Habits</h3><p>Tell us about your screen time, study patterns, and biggest distractions. Takes only 3 minutes.</p></div>
+        <div class="how-card animate-fade-up delay-2"><div class="how-num">2</div><h3>AI Analyzes</h3><p>Amazon Bedrock processes your behavioral data and identifies hidden patterns impacting your focus.</p></div>
+        <div class="how-card animate-fade-up delay-3"><div class="how-num">3</div><h3>Get Your Plan</h3><p>Receive a fully personalized focus plan—schedules, distraction blockers, and goal-specific strategies.</p></div>
+        <div class="how-card animate-fade-up delay-4"><div class="how-num">4</div><h3>Track & Evolve</h3><p>Your dashboard tracks progress in real-time and AI adapts your plan as your habits improve.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Features</span>
+        <h2 class="section-title">Everything You Need to <span class="gradient-text">Master Focus</span></h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-fade-up delay-1"><div class="feature-icon-box">🧠</div><h3>AI Behavioral Analysis</h3><p>Deep analysis of your digital habits, screen time patterns, and cognitive load cycles to understand your unique focus profile.</p><span class="feature-pill">Amazon Bedrock</span></div>
+        <div class="feature-card animate-fade-up delay-2"><div class="feature-icon-box">📅</div><h3>Adaptive Study Schedules</h3><p>Dynamic timetables that optimize around your peak energy windows, exam dates, and evolving performance data.</p><span class="feature-pill">AI-Powered</span></div>
+        <div class="feature-card animate-fade-up delay-3"><div class="feature-icon-box">🚫</div><h3>Smart Distraction Blocking</h3><p>Context-aware blocking that understands when you need focus mode vs. when social breaks benefit your productivity.</p><span class="feature-pill">Intelligent</span></div>
+        <div class="feature-card animate-fade-up delay-1"><div class="feature-icon-box">📊</div><h3>Real-time Analytics</h3><p>Comprehensive dashboards showing focus scores, productivity trends, streak tracking, and improvement areas.</p><span class="feature-pill">Live Data</span></div>
+        <div class="feature-card animate-fade-up delay-2"><div class="feature-icon-box">☕</div><h3>Science-Based Breaks</h3><p>Pomodoro and custom interval techniques personalized to your attention span for maximum sustained performance.</p><span class="feature-pill">Research-Based</span></div>
+        <div class="feature-card animate-fade-up delay-3"><div class="feature-icon-box">🔔</div><h3>Contextual Nudges</h3><p>Smart notifications that encourage positive habits at the right moments—never intrusive, always timely.</p><span class="feature-pill">Non-Intrusive</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI SECTION -->
+  <section id="ai-section" class="ai-section">
+    <div class="container">
+      <div class="ai-grid">
+        <div class="ai-visual">
+          <div class="ai-rings" style="position:relative;width:400px;height:400px;margin:0 auto">
+            <div class="ai-ring ai-ring-1"></div>
+            <div class="ai-ring ai-ring-2"></div>
+            <div class="ai-ring ai-ring-3"></div>
+            <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"><div class="ai-core">🤖</div></div>
+            <div class="ai-dot"></div><div class="ai-dot"></div><div class="ai-dot"></div>
+          </div>
+        </div>
+        <div>
+          <span class="section-eyebrow">Why AI is Essential</span>
+          <h2 class="section-title">What Makes AI <span class="gradient-text">Irreplaceable</span></h2>
+          <div class="ai-benefits-list">
+            <div class="ai-benefit"><div class="benefit-icon-box">🎯</div><div><h4>Pattern Recognition</h4><p>Identifies subtle behavioral patterns across thousands of data points that humans simply can't see.</p></div></div>
+            <div class="ai-benefit"><div class="benefit-icon-box">🔮</div><div><h4>Predictive Intelligence</h4><p>Predicts when you're most likely to be distracted and proactively prepares countermeasures.</p></div></div>
+            <div class="ai-benefit"><div class="benefit-icon-box">🔄</div><div><h4>Continuous Adaptation</h4><p>Learns from every interaction, getting smarter and more personalized as time goes on.</p></div></div>
+            <div class="ai-benefit"><div class="benefit-icon-box">⚡</div><div><h4>Instant Personalization</h4><p>Creates truly unique strategies for your circumstances—not templates, but genuinely personal plans.</p></div></div>
+          </div>
+          <div class="aws-badge-box">
+            <div class="aws-icon">☁️</div>
+            <div class="aws-badge-text"><strong>Powered by Amazon Bedrock</strong><span>World-class foundation models. Enterprise-grade security. Built for India.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" style="background:rgba(255,255,255,0.015);border-top:1px solid var(--border)">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">Student Stories</span>
+        <h2 class="section-title">Real Students, <span class="gradient-text">Real Results</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testi-card animate-fade-up delay-1"><div class="testi-stars">★★★★★</div><p class="testi-text">"I was spending 5+ hours on Instagram daily. FocusBharat's AI understood my patterns and designed a schedule I could actually stick to. My JEE prep has transformed completely."</p><div class="testi-author"><div class="testi-avatar">PS</div><div><div class="testi-name">Priya Sharma</div><div class="testi-meta">JEE Aspirant · Delhi</div></div></div></div>
+        <div class="testi-card animate-fade-up delay-2"><div class="testi-stars">★★★★★</div><p class="testi-text">"The AI-generated study plan feels like it was made just for me. It knows I'm a night owl and scheduled my deep work sessions accordingly. My NEET score improved by 40 marks!"</p><div class="testi-author"><div class="testi-avatar">AK</div><div><div class="testi-name">Arjun Kumar</div><div class="testi-meta">NEET Aspirant · Bengaluru</div></div></div></div>
+        <div class="testi-card animate-fade-up delay-3"><div class="testi-stars">★★★★★</div><p class="testi-text">"I was skeptical about an AI focus tool, but the behavioral analysis was shocking—it identified exactly when I lose concentration. Three weeks in and my productivity is up 45%."</p><div class="testi-author"><div class="testi-avatar">RV</div><div><div class="testi-name">Riya Verma</div><div class="testi-meta">Engineering Student · Mumbai</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <span class="section-eyebrow" style="display:block;text-align:center;margin-bottom:1rem">Get Started Today — It's Free</span>
+      <h2 class="cta-title">Ready to Master Your <span class="gradient-text">Focus?</span></h2>
+      <p class="cta-sub">Join 4,800+ Indian students who've transformed their study habits with AI</p>
+      <div class="cta-actions">
+        <button class="btn btn-primary btn-lg" onclick="navigate('login')">Start Your Free Journey ✦</button>
+        <button class="btn btn-ghost btn-lg" onclick="scrollToSection('features')">Explore Features</button>
+      </div>
+      <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--text-dim)">🇮🇳 Made with ❤️ for Indian Students · Part of AI for Bharat Program (Powered by AWS)</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--saffron),var(--violet));display:flex;align-items:center;justify-content:center;font-size:1.1rem">🧠</div>
+            <span style="font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--white)">Focus<span style="color:var(--saffron)">Bharat</span></span>
+          </div>
+          <p class="footer-brand-desc">AI-powered focus and learning platform built specifically for Indian students. Powered by Amazon Bedrock's foundation models.</p>
+          <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--text-dim)">☁️ <span>Powered by <strong style="color:var(--white)">Amazon Bedrock</strong></span></div>
+        </div>
+        <div class="footer-col"><h4>Product</h4><a href="#">Features</a><a href="#">How It Works</a><a href="#">AI Technology</a><a href="#" onclick="navigate('login');return false">Get Started</a></div>
+        <div class="footer-col"><h4>Resources</h4><a href="#">Documentation</a><a href="#">Blog</a><a href="#">Student Stories</a><a href="#">Support</a></div>
+        <div class="footer-col"><h4>Company</h4><a href="#">About Us</a><a href="#">AI for Bharat</a><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 FocusBharat. Part of AI for Bharat Program</span>
+        <span>🇮🇳 Made with ❤️ for Indian Students</span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 2: LOGIN  (pages/login.html)
+═══════════════════════════════════ -->
+<div id="page-login" class="page">
+  <div class="auth-visual">
+    <div class="auth-visual-content">
+      <div class="auth-logo-wrap"><div class="auth-logo-box">🧠</div><span class="auth-logo-name">Focus<span>Bharat</span></span></div>
+      <h2 class="auth-headline">Your personalized<br>focus journey<br>starts here.</h2>
+      <p class="auth-sub">Join thousands of Indian students using AI to break distraction habits and achieve their academic goals.</p>
+      <div class="auth-features">
+        <div class="auth-feature"><div class="auth-feature-icon">🤖</div><div class="auth-feature-text">AI-powered personalization via Amazon Bedrock</div></div>
+        <div class="auth-feature"><div class="auth-feature-icon">📊</div><div class="auth-feature-text">Real-time analytics and progress tracking</div></div>
+        <div class="auth-feature"><div class="auth-feature-icon">🎯</div><div class="auth-feature-text">Adaptive plans that evolve with your progress</div></div>
+        <div class="auth-feature"><div class="auth-feature-icon">🇮🇳</div><div class="auth-feature-text">Built specifically for Indian students &amp; exam prep</div></div>
+      </div>
+      <div style="padding:1rem 1.25rem;border-radius:12px;background:rgba(255,255,255,0.05);border:1px solid var(--border);font-size:0.82rem;color:var(--text-dim)">
+        <span style="color:var(--saffron);font-weight:700">☁️ Amazon Bedrock</span> — Enterprise-grade AI, privacy-first, data stays in India.
+      </div>
+    </div>
+  </div>
+  <div class="auth-form-panel">
+    <div class="auth-form-inner">
+      <div style="margin-bottom:2rem;cursor:pointer;display:inline-flex;align-items:center;gap:0.4rem;color:var(--text-dim);font-size:0.85rem" onclick="navigate('landing')">← Back to home</div>
+      <div class="auth-tabs">
+        <div class="auth-tab active" id="tab-login" onclick="switchAuthTab('login')">Sign In</div>
+        <div class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')">Create Account</div>
+      </div>
+      <!-- LOGIN -->
+      <div class="auth-form-body active" id="form-login">
+        <h2 class="auth-form-title">Welcome back!</h2>
+        <p class="auth-form-sub">Sign in to continue your focus journey.</p>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="your.email@example.com" id="login-email"></div>
+        <div class="form-group"><label class="form-label">Password</label><input type="password" class="form-input" placeholder="Enter your password" id="login-password"></div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem">
+          <label style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-dim);cursor:pointer"><input type="checkbox" style="accent-color:var(--saffron)"> Remember me</label>
+          <a href="#" style="font-size:0.85rem;color:var(--saffron);font-weight:600">Forgot password?</a>
+        </div>
+        <button class="btn btn-primary btn-full btn-lg" onclick="handleLogin()">Sign In ✦</button>
+        <div class="divider">OR</div>
+        <button class="social-btn" onclick="handleGoogleAuth()">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.74-.07-1.45-.19-2.14H9v4.05h4.84c-.21 1.04-.84 1.92-1.79 2.51v2.09h2.89c1.69-1.56 2.7-3.87 2.7-6.51z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.89-2.09c-.81.54-1.84.86-3.07.86-2.36 0-4.36-1.59-5.08-3.73H.96v2.16C2.43 15.98 5.48 18 9 18z"/><path fill="#FBBC05" d="M3.92 10.86c-.18-.54-.28-1.12-.28-1.71 0-.59.1-1.16.28-1.71V5.28H.96A9 9 0 000 9c0 1.45.35 2.82.96 4.02l2.96-2.16z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.47.89 11.43 0 9 0 5.48 0 2.43 2.02.96 4.98l2.96 2.16C4.64 5.17 6.64 3.58 9 3.58z"/></svg>
+          Continue with Google
+        </button>
+        <p class="form-footer">Don't have an account? <a onclick="switchAuthTab('signup')">Create one free →</a></p>
+      </div>
+      <!-- SIGNUP -->
+      <div class="auth-form-body" id="form-signup">
+        <h2 class="auth-form-title">Join FocusBharat</h2>
+        <p class="auth-form-sub">Create your free account and meet your AI focus coach.</p>
+        <div class="form-row">
+          <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="Priya" id="signup-fname"></div>
+          <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Sharma" id="signup-lname"></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="your.email@example.com" id="signup-email"></div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Create a strong password" id="signup-password" oninput="checkPasswordStrength(this.value)">
+          <div class="password-strength-bar"><div class="pw-strength-fill" id="pw-fill"></div></div>
+        </div>
+        <div class="form-group"><label class="form-label">I'm preparing for</label><select class="form-input" id="signup-goal"><option value="">Select your goal...</option><option>JEE / Engineering Entrance</option><option>NEET / Medical Entrance</option><option>UPSC / Government Exams</option><option>CA / Professional Exams</option><option>Board Exams (10th/12th)</option><option>College Academics</option><option>Other</option></select></div>
+        <label style="display:flex;align-items:flex-start;gap:0.6rem;font-size:0.83rem;color:var(--text-dim);cursor:pointer;margin-bottom:1.5rem"><input type="checkbox" style="accent-color:var(--saffron);margin-top:2px"> I agree to the <a href="#" style="color:var(--saffron)">Terms of Service</a> and <a href="#" style="color:var(--saffron)">Privacy Policy</a></label>
+        <button class="btn btn-primary btn-full btn-lg" onclick="handleSignup()">Create Free Account ✦</button>
+        <div class="divider">OR</div>
+        <button class="social-btn" onclick="handleGoogleAuth()">
+          <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.74-.07-1.45-.19-2.14H9v4.05h4.84c-.21 1.04-.84 1.92-1.79 2.51v2.09h2.89c1.69-1.56 2.7-3.87 2.7-6.51z"/><path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.89-2.09c-.81.54-1.84.86-3.07.86-2.36 0-4.36-1.59-5.08-3.73H.96v2.16C2.43 15.98 5.48 18 9 18z"/><path fill="#FBBC05" d="M3.92 10.86c-.18-.54-.28-1.12-.28-1.71 0-.59.1-1.16.28-1.71V5.28H.96A9 9 0 000 9c0 1.45.35 2.82.96 4.02l2.96-2.16z"/><path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.47.89 11.43 0 9 0 5.48 0 2.43 2.02.96 4.98l2.96 2.16C4.64 5.17 6.64 3.58 9 3.58z"/></svg>
+          Sign up with Google
+        </button>
+        <p class="form-footer">Already have an account? <a onclick="switchAuthTab('login')">Sign in →</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 3: ONBOARDING  (pages/onboarding.html)
+═══════════════════════════════════ -->
+<div id="page-onboarding" class="page">
+  <nav class="navbar"><div class="nav-brand" onclick="navigate('landing')"><div class="nav-logo">🧠</div><span class="nav-brand-name">Focus<span>Bharat</span></span></div></nav>
+  <div class="onboarding-wrap">
+    <div class="onboard-progress">
+      <div class="onboard-progress-bar"><div class="onboard-progress-fill" id="ob-progress-fill" style="width:33%"></div></div>
+      <div class="onboard-progress-text" id="ob-progress-text">Step 1 of 3 — Digital Habits</div>
+    </div>
+    <div class="onboard-card">
+      <!-- STEP 1 -->
+      <div class="onboard-step active" id="ob-step-1">
+        <div class="onboard-step-header"><h2>Tell us about your digital habits</h2><p>Help our AI understand your baseline — honest answers lead to better insights.</p></div>
+        <div class="habit-slider"><div class="habit-slider-label">📱 Social Media Usage<span id="sm-display" style="margin-left:auto;color:var(--saffron);font-weight:700">4.5 hrs/day</span></div><div class="range-wrap"><input type="range" class="range-input" min="0" max="12" step="0.5" value="4.5" id="sm-slider" oninput="updateSlider('sm',this.value,'hrs/day')"></div></div>
+        <div class="habit-slider"><div class="habit-slider-label">📚 Study Time<span id="study-display" style="margin-left:auto;color:var(--saffron);font-weight:700">3 hrs/day</span></div><div class="range-wrap"><input type="range" class="range-input" min="0" max="16" step="0.5" value="3" id="study-slider" oninput="updateSlider('study',this.value,'hrs/day')"></div></div>
+        <div class="habit-slider"><div class="habit-slider-label">🖥️ Total Screen Time<span id="screen-display" style="margin-left:auto;color:var(--saffron);font-weight:700">8 hrs/day</span></div><div class="range-wrap"><input type="range" class="range-input" min="0" max="18" step="0.5" value="8" id="screen-slider" oninput="updateSlider('screen',this.value,'hrs/day')"></div></div>
+        <div class="habit-slider"><div class="habit-slider-label">🎮 Gaming / Entertainment<span id="game-display" style="margin-left:auto;color:var(--saffron);font-weight:700">1.5 hrs/day</span></div><div class="range-wrap"><input type="range" class="range-input" min="0" max="8" step="0.5" value="1.5" id="game-slider" oninput="updateSlider('game',this.value,'hrs/day')"></div></div>
+        <div class="habit-chart-wrap"><h4>📊 Your Time Distribution</h4><canvas id="habit-chart" height="120"></canvas></div>
+        <div class="onboard-actions"><button class="btn btn-primary" onclick="goToStep(2)">Next: Distractions →</button></div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="onboard-step" id="ob-step-2">
+        <div class="onboard-step-header"><h2>What distracts you most?</h2><p>Select all that apply — our AI uses this to build your personalized blocker strategy.</p></div>
+        <div class="distraction-grid">
+          <div class="dist-card" onclick="toggleDist(this)" data-val="instagram"><div class="dist-emoji">📸</div><div class="dist-label">Instagram</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="youtube"><div class="dist-emoji">▶️</div><div class="dist-label">YouTube</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="gaming"><div class="dist-emoji">🎮</div><div class="dist-label">Gaming</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="whatsapp"><div class="dist-emoji">💬</div><div class="dist-label">WhatsApp</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="twitter"><div class="dist-emoji">🐦</div><div class="dist-label">Twitter / X</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="shopping"><div class="dist-emoji">🛒</div><div class="dist-label">Shopping</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="netflix"><div class="dist-emoji">📺</div><div class="dist-label">Netflix / OTT</div><div class="dist-check">✓</div></div>
+          <div class="dist-card" onclick="toggleDist(this)" data-val="news"><div class="dist-emoji">📰</div><div class="dist-label">News Apps</div><div class="dist-check">✓</div></div>
+        </div>
+        <div class="form-group"><label class="form-label">Any specific apps or sites to block?</label><input type="text" class="form-input" placeholder="e.g. Reddit, LinkedIn, specific games..." id="specific-apps"></div>
+        <div class="onboard-actions"><button class="btn btn-ghost" onclick="goToStep(1)">← Back</button><button class="btn btn-primary" onclick="goToStep(3)">Next: Set Goals →</button></div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="onboard-step" id="ob-step-3">
+        <div class="onboard-step-header"><h2>Set your focus goals</h2><p>These targets guide your AI-generated plan and daily recommendations.</p></div>
+        <div class="goals-grid">
+          <div class="form-group"><label class="form-label">Daily Study Target</label><select class="form-input" id="goal-study"><option value="4">4 hours of focused study</option><option value="6" selected>6 hours of focused study</option><option value="8">8 hours of focused study</option><option value="10">10 hours of focused study</option></select></div>
+          <div class="form-group"><label class="form-label">Reduce Screen Time By</label><select class="form-input" id="goal-screen"><option value="25" selected>25% reduction</option><option value="50">50% reduction</option><option value="75">75% reduction</option></select></div>
+          <div class="form-group"><label class="form-label">Social Media Limit</label><select class="form-input" id="goal-social"><option value="1">1 hour per day</option><option value="2" selected>2 hours per day</option><option value="3">3 hours per day</option></select></div>
+          <div class="form-group"><label class="form-label">Peak Productivity Window</label><select class="form-input" id="goal-peak"><option value="early-morning" selected>Early Morning (6–9 AM)</option><option value="morning">Morning (9–12 PM)</option><option value="afternoon">Afternoon (2–5 PM)</option><option value="evening">Evening (7–10 PM)</option></select></div>
+          <div class="form-group"><label class="form-label">Exam / Goal Date</label><input type="date" class="form-input" id="goal-date"></div>
+          <div class="form-group"><label class="form-label">I'm Preparing For</label><select class="form-input" id="goal-exam"><option>JEE / Engineering</option><option>NEET / Medical</option><option>UPSC / Civil Services</option><option>Board Exams</option><option>College Academics</option><option>Professional Certification</option></select></div>
+        </div>
+        <div class="form-group"><label class="form-label">What motivates you most? (optional)</label><textarea class="form-input" rows="3" placeholder="e.g. Cracking IIT, making my family proud, scoring 95%+..." id="goal-motivation"></textarea></div>
+        <div class="onboard-actions"><button class="btn btn-ghost" onclick="goToStep(2)">← Back</button><button class="btn btn-primary btn-lg" onclick="startAnalysis()">🤖 Analyze My Focus Habits →</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 4: AI LOADING  (pages/ai-loading.html)
+═══════════════════════════════════ -->
+<div id="page-loading" class="page">
+  <div class="loading-wrap">
+    <div class="loading-logo-area">
+      <div class="loading-logo-icon">🧠</div>
+      <div class="loading-logo-name">Focus<span>Bharat</span></div>
+    </div>
+    <div class="loading-circle">
+      <svg class="loading-svg" width="220" height="220" viewBox="0 0 220 220">
+        <defs>
+          <linearGradient id="progress-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FF6B00"/>
+            <stop offset="100%" style="stop-color:#6C3FD4"/>
+          </linearGradient>
+        </defs>
+        <circle class="loading-track" cx="110" cy="110" r="90"/>
+        <circle class="loading-fill" cx="110" cy="110" r="90" id="loading-ring"/>
+      </svg>
+      <div class="loading-pct"><span class="loading-pct-num" id="loading-num">0%</span><span class="loading-pct-label">Complete</span></div>
+    </div>
+    <div class="loading-status">
+      <div class="loading-status-main" id="loading-main-text">Processing behavioral data...</div>
+      <div class="loading-status-sub" id="loading-sub-text">Amazon Bedrock AI is analyzing your patterns</div>
+    </div>
+    <div class="loading-steps">
+      <div class="loading-step active" id="ls-1"><div class="step-dot"></div>Analyzing digital habits &amp; screen patterns</div>
+      <div class="loading-step" id="ls-2"><div class="step-dot"></div>Identifying focus blockers and peak windows</div>
+      <div class="loading-step" id="ls-3"><div class="step-dot"></div>Generating personalized recommendations</div>
+      <div class="loading-step" id="ls-4"><div class="step-dot"></div>Building your adaptive study schedule</div>
+      <div class="loading-step" id="ls-5"><div class="step-dot"></div>Finalizing your AI focus plan</div>
+    </div>
+    <div class="loading-aws">☁️ Powered by <strong style="color:var(--white);margin-left:4px">Amazon Bedrock</strong> Foundation Models</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 5: RESULTS  (pages/results.html)
+═══════════════════════════════════ -->
+<div id="page-results" class="page">
+  <nav class="navbar"><div class="nav-brand" onclick="navigate('landing')"><div class="nav-logo">🧠</div><span class="nav-brand-name">Focus<span>Bharat</span></span></div><div class="nav-links"><button class="btn btn-primary" onclick="navigate('dashboard')">Go to Dashboard →</button></div></nav>
+  <div class="container" style="padding-top:90px">
+    <div class="results-hero">
+      <div class="badge badge-saffron" style="margin:0 auto 1rem">🤖 AI Analysis Complete</div>
+      <h1>Your Personalized Focus Plan is Ready! 🎯</h1>
+      <p>Amazon Bedrock AI has analyzed your patterns and built a custom strategy to supercharge your productivity.</p>
+    </div>
+    <div class="results-scores">
+      <div class="score-card"><h3>Focus Risk Score</h3><div class="score-display"><div class="score-circle-wrap"><svg class="score-svg" viewBox="0 0 130 130"><circle class="score-track" cx="65" cy="65" r="56"/><circle class="score-fill warning" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="134" id="risk-circle"/></svg><div class="score-num"><span>68</span><small>/100</small></div></div><div class="score-info"><span class="badge badge-warning">⚠️ Moderate Risk</span><h4>Room for Improvement</h4><p>Your focus shows inconsistency, especially in afternoons. AI has identified 3 key blockers in your routine.</p></div></div></div>
+      <div class="score-card"><h3>Productivity Potential</h3><div class="score-display"><div class="score-circle-wrap"><svg class="score-svg" viewBox="0 0 130 130"><circle class="score-track" cx="65" cy="65" r="56"/><circle class="score-fill success" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="63" id="potential-circle"/></svg><div class="score-num"><span>82</span><small>/100</small></div></div><div class="score-info"><span class="badge badge-green">📈 High Potential</span><h4>Strong Foundation</h4><p>Excellent opportunities to optimize your peak hours. With this plan, 95+ is achievable within 30 days.</p></div></div></div>
+    </div>
+    <h2 class="recs-title">AI-Generated Recommendations</h2>
+    <p class="recs-sub">Powered by Amazon Bedrock foundation models · Personalized to your exact habits</p>
+    <div class="recs-grid">
+      <div class="rec-card"><div class="rec-header"><div class="rec-icon">🌅</div><div><h3>Morning Deep Work Block (7–9 AM)</h3><p>Dedicate your peak morning energy to critical tasks—zero notifications, maximum output.</p></div></div><div class="rec-why"><div class="rec-why-toggle" onclick="toggleWhy(this)">🔍 Why AI suggested this <span>▼</span></div><div class="rec-why-content"><p><strong>Pattern Detected:</strong> Your cognitive load analysis shows highest focus capacity between 7–9 AM.</p><p><strong>Personalization:</strong> Based on your stated goal of early morning productivity and low phone usage data.</p></div></div><div class="rec-actions"><button class="btn btn-primary" onclick="acceptRec(this,'Morning Deep Work Block')">Accept Plan ✓</button><button class="btn btn-ghost" style="font-size:0.85rem">Customize</button></div></div>
+      <div class="rec-card"><div class="rec-header"><div class="rec-icon">📱</div><div><h3>Instagram: Max 10 Checks Per Day</h3><p>Limit social media checks to prevent cognitive fragmentation and attention residue.</p></div></div><div class="rec-why"><div class="rec-why-toggle" onclick="toggleWhy(this)">🔍 Why AI suggested this <span>▼</span></div><div class="rec-why-content"><p><strong>Data Found:</strong> Your usage shows ~4.5 hours daily on social media — your #1 focus killer.</p><p><strong>Science-Backed:</strong> Each phone check creates 23-minute recovery time. Limiting helps greatly.</p></div></div><div class="rec-actions"><button class="btn btn-primary" onclick="acceptRec(this,'Instagram Limit')">Accept Plan ✓</button><button class="btn btn-ghost" style="font-size:0.85rem">Customize</button></div></div>
+      <div class="rec-card"><div class="rec-header"><div class="rec-icon">☕</div><div><h3>50-Minute Focus / 10-Minute Break Cycles</h3><p>Personalized Pomodoro intervals matched to your natural attention span profile.</p></div></div><div class="rec-why"><div class="rec-why-toggle" onclick="toggleWhy(this)">🔍 Why AI suggested this <span>▼</span></div><div class="rec-why-content"><p><strong>Attention Span Analysis:</strong> Your patterns suggest a natural 50-minute focus window.</p><p><strong>Expected Outcome:</strong> Prevents both mental fatigue and motivation loss between sessions.</p></div></div><div class="rec-actions"><button class="btn btn-primary" onclick="acceptRec(this,'Pomodoro 50/10')">Accept Plan ✓</button><button class="btn btn-ghost" style="font-size:0.85rem">Customize</button></div></div>
+      <div class="rec-card"><div class="rec-header"><div class="rec-icon">🌙</div><div><h3>Evening Review &amp; Planning (8:00–8:15 PM)</h3><p>End each day with a structured 15-minute reflection and tomorrow's priority planning.</p></div></div><div class="rec-why"><div class="rec-why-toggle" onclick="toggleWhy(this)">🔍 Why AI suggested this <span>▼</span></div><div class="rec-why-content"><p><strong>Behavioral Pattern:</strong> Students who do evening reviews show 35% better focus consistency.</p><p><strong>Timing Logic:</strong> 8 PM fits your routine without disrupting wind-down sleep preparation.</p></div></div><div class="rec-actions"><button class="btn btn-primary" onclick="acceptRec(this,'Evening Review')">Accept Plan ✓</button><button class="btn btn-ghost" style="font-size:0.85rem">Customize</button></div></div>
+    </div>
+    <div class="plan-timeline">
+      <h3 class="plan-title">📅 Your AI-Generated Daily Schedule</h3>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">6:00 AM</div><div class="timeline-content"><h4>Wake Up &amp; Morning Routine</h4><p>No screens for first 30 minutes. Exercise, hydrate, prepare mentally.</p></div><div class="timeline-badge-wrap"><span class="badge badge-green">Habit</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">7:00–9:00</div><div class="timeline-content"><h4>🔥 Deep Work Block #1</h4><p>Hardest subject or task. Phone in another room. Full focus mode.</p></div><div class="timeline-badge-wrap"><span class="badge badge-saffron">Priority</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">9:00–9:30</div><div class="timeline-content"><h4>Breakfast &amp; Scheduled Social Time</h4><p>Check messages, reply to important notifications. Set a 30-min timer.</p></div><div class="timeline-badge-wrap"><span class="badge badge-violet">Allowed</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">9:30–12:00</div><div class="timeline-content"><h4>📚 Study Block with Pomodoros</h4><p>3× 50-min focus cycles with 10-min breaks. Review &amp; practice problems.</p></div><div class="timeline-badge-wrap"><span class="badge badge-saffron">Focus</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:00–1:30</div><div class="timeline-content"><h4>Lunch &amp; Real Break</h4><p>Complete rest. Walk, eat, relax. Avoid YouTube—let brain consolidate.</p></div><div class="timeline-badge-wrap"><span class="badge badge-green">Rest</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">1:30–5:00</div><div class="timeline-content"><h4>📖 Afternoon Study + Revision</h4><p>Lighter topics and revision. Afternoon is your second-best focus window.</p></div><div class="timeline-badge-wrap"><span class="badge badge-violet">Study</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">5:00–7:00</div><div class="timeline-content"><h4>Break &amp; Physical Activity</h4><p>Exercise, evening walk, family time. Completely disconnect from studies.</p></div><div class="timeline-badge-wrap"><span class="badge badge-green">Recharge</span></div></div>
+        <div class="timeline-item"><div class="timeline-time">8:00–8:15</div><div class="timeline-content"><h4>🌙 AI Review &amp; Planning</h4><p>Log progress in FocusBharat. Plan tomorrow's priorities. 15 minutes only.</p></div><div class="timeline-badge-wrap"><span class="badge badge-saffron">Key</span></div></div>
+      </div>
+    </div>
+    <div class="results-cta-box">
+      <h2>Ready to Start Your Focus Journey? 🚀</h2>
+      <p>Your personalized dashboard is ready with real-time tracking, streak counters, and AI nudges.</p>
+      <button class="btn btn-primary btn-lg" onclick="navigate('dashboard')">Open My Dashboard →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════
+     PAGE 6: DASHBOARD  (pages/dashboard.html)
+═══════════════════════════════════ -->
+<div id="page-dashboard" class="page">
+  <aside class="dash-sidebar">
+    <div class="sidebar-logo"><div class="sidebar-logo-box">🧠</div><span class="sidebar-logo-name">Focus<span>Bharat</span></span></div>
+    <div class="sidebar-user"><div class="sidebar-avatar" id="sb-avatar">P</div><div><div class="sidebar-user-name" id="sb-name">Priya Sharma</div><div class="sidebar-user-role" id="sb-role">JEE Aspirant · Day 14</div></div></div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-item active" data-page="overview" onclick="switchDash('overview')"><span class="sidebar-item-icon">📊</span> Dashboard</div>
+      <div class="sidebar-item" data-page="plan" onclick="switchDash('plan')"><span class="sidebar-item-icon">📅</span> My Plan</div>
+      <div class="sidebar-item" data-page="progress" onclick="switchDash('progress')"><span class="sidebar-item-icon">📈</span> Progress</div>
+      <div class="sidebar-item" data-page="alerts" onclick="switchDash('alerts')"><span class="sidebar-item-icon">🔔</span> Alerts<span class="sidebar-item-badge" id="alerts-badge">3</span></div>
+      <div class="sidebar-item" data-page="settings" onclick="switchDash('settings')"><span class="sidebar-item-icon">⚙️</span> Settings</div>
+      <div class="sidebar-item" data-page="feedback" onclick="switchDash('feedback')"><span class="sidebar-item-icon">💬</span> Feedback</div>
+    </nav>
+    <div class="sidebar-bottom"><div class="sidebar-item" onclick="navigate('landing')"><span class="sidebar-item-icon">🏠</span> Back to Home</div></div>
+  </aside>
+
+  <main class="dash-main">
+    <!-- OVERVIEW -->
+    <div class="dash-main-page active" id="dash-overview">
+      <div class="dash-header">
+        <div class="dash-header-text"><h1 id="dashboardGreeting">Good morning! 🌅</h1><p id="dashboardSubtext">Here's your focus overview for today · Streak: 🔥 14 days</p></div>
+        <div class="dash-header-actions">
+          <div class="notif-btn" onclick="switchDash('alerts')">🔔<div class="notif-dot"></div></div>
+          <button class="btn btn-primary" onclick="showToast('🤖 AI is analyzing your latest patterns...','info')">Get AI Insight</button>
+        </div>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="kpi-label">Focus Score</div><div class="kpi-val" id="focusScoreValue" style="color:var(--saffron)">72<small style="font-size:1rem;color:var(--text-dim)">/100</small></div><span class="kpi-change up">▲ +8 vs yesterday</span></div>
+        <div class="kpi-card"><div class="kpi-label">Productivity</div><div class="kpi-val" id="productivityValue" style="color:var(--success)">68%</div><span class="kpi-change up">▲ +1.1h vs avg</span></div>
+        <div class="kpi-card"><div class="kpi-label">Screen Time</div><div class="kpi-val" id="screenTimeValue" style="color:var(--violet-light)">6.2h</div><span class="kpi-change down">▼ −2.7h vs before</span></div>
+        <div class="kpi-card"><div class="kpi-label">Focus Streak</div><div class="kpi-val">🔥 14</div><span class="kpi-change up">▲ Personal best!</span></div>
+      </div>
+      <div class="dash-charts-row">
+        <div class="dash-chart-card"><div class="chart-card-header"><div class="chart-card-title">Focus Score — This Week</div><div class="chart-period-btns"><button class="period-btn active">Week</button><button class="period-btn" onclick="this.parentElement.querySelectorAll('.period-btn').forEach(b=>b.classList.remove('active'));this.classList.add('active')">Month</button></div></div><canvas id="focus-chart" height="120"></canvas></div>
+        <div class="dash-chart-card"><div class="chart-card-header"><div class="chart-card-title">Time Breakdown</div></div><canvas id="time-doughnut" height="160"></canvas></div>
+      </div>
+      <div class="dash-bottom-row">
+        <div class="dash-chart-card">
+          <div class="chart-card-header"><div class="chart-card-title">Recent Activity</div></div>
+          <div class="activity-feed">
+            <div class="activity-item"><div class="activity-icon-box">✅</div><div class="activity-text"><div class="activity-main">Completed Morning Deep Work Block</div><div class="activity-meta">7:00–9:00 AM · 120 minutes · No interruptions</div></div><div class="activity-time">2h ago</div></div>
+            <div class="activity-item"><div class="activity-icon-box">🏆</div><div class="activity-text"><div class="activity-main">14-day streak achieved!</div><div class="activity-meta">New personal record in consistent focus</div></div><div class="activity-time">3h ago</div></div>
+            <div class="activity-item"><div class="activity-icon-box">📱</div><div class="activity-text"><div class="activity-main">Instagram limit reached (10/10 checks)</div><div class="activity-meta">AI blocked further access until 6 PM</div></div><div class="activity-time">5h ago</div></div>
+            <div class="activity-item"><div class="activity-icon-box">🤖</div><div class="activity-text"><div class="activity-main">AI updated your evening plan</div><div class="activity-meta">Adjusted based on today's focus session quality</div></div><div class="activity-time">6h ago</div></div>
+            <div class="activity-item"><div class="activity-icon-box">📚</div><div class="activity-text"><div class="activity-main">Completed Pomodoro Cycle ×3</div><div class="activity-meta">Physics revision · 150 min total focus time</div></div><div class="activity-time">Yesterday</div></div>
+          </div>
+        </div>
+        <div class="dash-chart-card">
+          <div class="chart-card-header"><div class="chart-card-title">Today's AI Plan</div></div>
+          <div class="plan-items">
+            <div class="plan-item"><div class="plan-item-status">✅</div><div class="plan-item-content"><div class="plan-item-title">Morning Deep Work</div><div class="plan-item-time">7:00–9:00 AM · Completed</div></div><span class="plan-item-tag badge badge-green">Done</span></div>
+            <div class="plan-item"><div class="plan-item-status">🔄</div><div class="plan-item-content"><div class="plan-item-title">Study Block #2</div><div class="plan-item-time">9:30 AM–12:00 PM · In progress</div></div><span class="plan-item-tag badge badge-saffron">Active</span></div>
+            <div class="plan-item"><div class="plan-item-status">⏰</div><div class="plan-item-content"><div class="plan-item-title">Afternoon Revision</div><div class="plan-item-time">1:30–5:00 PM · Upcoming</div></div><span class="plan-item-tag badge badge-violet">Later</span></div>
+            <div class="plan-item"><div class="plan-item-status">⏰</div><div class="plan-item-content"><div class="plan-item-title">Evening Review</div><div class="plan-item-time">8:00–8:15 PM · Upcoming</div></div><span class="plan-item-tag badge badge-violet">Later</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLAN PAGE -->
+    <div class="dash-main-page" id="dash-plan">
+      <div class="dash-header"><div class="dash-header-text"><h1>My AI Focus Plan 📅</h1><p>Your personalized schedule · Updated by AI based on recent performance</p></div><div class="dash-header-actions"><button class="btn btn-primary" onclick="navigate('results')">View Full Analysis →</button></div></div>
+      <div class="dash-chart-card" style="margin-bottom:1.5rem;padding:2rem">
+        <div class="chart-card-header"><div class="chart-card-title">Today's Focus Schedule</div><span class="badge badge-saffron">AI Generated</span></div>
+        <div class="timeline" style="margin-top:1rem">
+          <div class="timeline-item"><div class="timeline-time">7–9 AM</div><div class="timeline-content"><h4>🔥 Deep Work Block</h4><p>High-priority subjects. Physics / Math / Chemistry. Zero distractions.</p></div><div class="timeline-badge-wrap"><span class="badge badge-saffron">Priority</span></div></div>
+          <div class="timeline-item"><div class="timeline-time">9:30 AM</div><div class="timeline-content"><h4>📚 Pomodoro Study Cycles</h4><p>3× 50-min cycles with tracked breaks. Smart app blocking active.</p></div><div class="timeline-badge-wrap"><span class="badge badge-violet">Active</span></div></div>
+          <div class="timeline-item"><div class="timeline-time">1:30 PM</div><div class="timeline-content"><h4>📖 Afternoon Revision</h4><p>Topic review, past papers, concept consolidation.</p></div><div class="timeline-badge-wrap"><span class="badge badge-violet">Upcoming</span></div></div>
+          <div class="timeline-item"><div class="timeline-time">8:00 PM</div><div class="timeline-content"><h4>🌙 AI Evening Review</h4><p>Log progress, update tomorrow's priorities, 15 minutes only.</p></div><div class="timeline-badge-wrap"><span class="badge badge-saffron">Key</span></div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem">
+        <div class="dash-chart-card" style="padding:1.75rem"><div class="chart-card-header"><div class="chart-card-title">Weekly Completion Rate</div></div><canvas id="plan-bar-chart" height="160"></canvas></div>
+        <div class="dash-chart-card" style="padding:1.75rem"><div class="chart-card-header"><div class="chart-card-title">AI Plan Insights</div></div><div style="display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem"><div style="padding:1rem;border-radius:12px;background:rgba(255,107,0,0.08);border:1px solid rgba(255,107,0,0.2)"><p style="font-size:0.83rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--saffron)">🎯 Top Insight:</strong> You complete 91% of morning sessions but only 65% of afternoon ones.</p></div><div style="padding:1rem;border-radius:12px;background:rgba(108,63,212,0.08);border:1px solid rgba(108,63,212,0.2)"><p style="font-size:0.83rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--violet-light)">📈 Trend:</strong> Focus score improved 14 points in 2 weeks. You'll hit 85+ by next week.</p></div><div style="padding:1rem;border-radius:12px;background:rgba(6,169,77,0.08);border:1px solid rgba(6,169,77,0.2)"><p style="font-size:0.83rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--success)">🔥 Streak:</strong> 14-day consecutive focus streak — your personal best!</p></div></div></div>
+      </div>
+    </div>
+
+    <!-- PROGRESS PAGE -->
+    <div class="dash-main-page" id="dash-progress">
+      <div class="dash-header"><div class="dash-header-text"><h1>My Progress 📈</h1><p>Track how your focus and productivity evolve over time</p></div></div>
+      <div class="progress-page-grid">
+        <div class="progress-big-chart"><div class="chart-card-header"><div class="chart-card-title">Focus Score Trend (30 Days)</div></div><canvas id="progress-line-chart" height="160" style="margin-top:1rem"></canvas></div>
+        <div class="dash-chart-card" style="padding:1.5rem">
+          <div class="chart-card-header"><div class="chart-card-title">Habit Progress</div></div>
+          <div style="display:flex;flex-direction:column;gap:1.25rem;margin-top:1rem">
+            <div><div style="display:flex;justify-content:space-between;font-size:0.83rem;margin-bottom:0.4rem"><span style="color:var(--text-body);font-weight:600">Study Time Goal</span><span style="color:var(--success);font-weight:700">5.2h / 6h</span></div><div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="width:87%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--india-green),var(--success))"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.83rem;margin-bottom:0.4rem"><span style="color:var(--text-body);font-weight:600">Social Media Limit</span><span style="color:var(--saffron);font-weight:700">1.8h / 2h</span></div><div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="width:90%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--saffron),var(--gold))"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.83rem;margin-bottom:0.4rem"><span style="color:var(--text-body);font-weight:600">Deep Work Sessions</span><span style="color:var(--violet-light);font-weight:700">14 / 14 days</span></div><div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="width:100%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--violet),var(--violet-light))"></div></div></div>
+            <div><div style="display:flex;justify-content:space-between;font-size:0.83rem;margin-bottom:0.4rem"><span style="color:var(--text-body);font-weight:600">Evening Reviews</span><span style="color:var(--success);font-weight:700">11 / 14 days</span></div><div style="height:8px;border-radius:4px;background:rgba(255,255,255,0.06);overflow:hidden"><div style="width:78%;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--india-green),var(--success))"></div></div></div>
+          </div>
+          <div style="margin-top:1.5rem;padding:1.25rem;border-radius:14px;background:linear-gradient(135deg,rgba(255,107,0,0.1),rgba(108,63,212,0.1));border:1px solid rgba(255,107,0,0.2)"><div style="font-family:var(--font-display);font-size:0.85rem;font-weight:700;color:var(--white);margin-bottom:0.5rem">🤖 AI Weekly Summary</div><p style="font-size:0.8rem;color:var(--text-dim);line-height:1.5">Excellent week! You're in the top 15% of FocusBharat users. Morning deep work consistency is your biggest improvement. Keep it up—JEE is 47 days away!</p></div>
+        </div>
+      </div>
+      <div class="dash-chart-card" style="padding:1.75rem">
+        <div class="chart-card-header"><div class="chart-card-title">Daily Focus Heatmap — This Month</div></div>
+        <div class="weekly-summary-grid" style="margin-top:1.25rem">
+          <div class="day-block"><div class="day-label">Mon</div><div class="day-bar-wrap"><div class="day-bar" style="height:55px"></div></div><div class="day-val">68</div></div>
+          <div class="day-block"><div class="day-label">Tue</div><div class="day-bar-wrap"><div class="day-bar" style="height:62px"></div></div><div class="day-val">74</div></div>
+          <div class="day-block"><div class="day-label">Wed</div><div class="day-bar-wrap"><div class="day-bar" style="height:48px"></div></div><div class="day-val">62</div></div>
+          <div class="day-block"><div class="day-label">Thu</div><div class="day-bar-wrap"><div class="day-bar" style="height:70px"></div></div><div class="day-val">78</div></div>
+          <div class="day-block"><div class="day-label">Fri</div><div class="day-bar-wrap"><div class="day-bar" style="height:60px"></div></div><div class="day-val">72</div></div>
+          <div class="day-block"><div class="day-label">Sat</div><div class="day-bar-wrap"><div class="day-bar" style="height:40px;background:rgba(108,63,212,0.5)"></div></div><div class="day-val">55</div></div>
+          <div class="day-block"><div class="day-label">Sun</div><div class="day-bar-wrap"><div class="day-bar" style="height:35px;background:rgba(108,63,212,0.5)"></div></div><div class="day-val">50</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERTS PAGE -->
+    <div class="dash-main-page" id="dash-alerts">
+      <div class="dash-header"><div class="dash-header-text"><h1>Smart Alerts 🔔</h1><p>AI-generated nudges and insights personalized to your patterns</p></div><div class="dash-header-actions"><button class="btn btn-ghost" onclick="showToast('All alerts marked as read','success')">Mark All Read</button></div></div>
+      <div class="alerts-list">
+        <div class="alert-item"><div class="alert-icon-circle orange">⚠️</div><div class="alert-content"><h4>Distraction Spike Detected — Afternoon Window</h4><p>Your phone usage between 2–4 PM is 3× your daily average. AI suggests a short walk break at 2:00 PM to reset.</p></div><div class="alert-time">Now</div></div>
+        <div class="alert-item"><div class="alert-icon-circle green">🎉</div><div class="alert-content"><h4>14-Day Focus Streak — Personal Record!</h4><p>Congratulations! 14 consecutive days meeting your focus goals. You're in the top 12% of all FocusBharat users!</p></div><div class="alert-time">2h ago</div></div>
+        <div class="alert-item"><div class="alert-icon-circle yellow">📅</div><div class="alert-content"><h4>JEE Exam: 47 Days Remaining</h4><p>AI projects you're on track. However, Organic Chemistry needs more attention—only 60% of recommended sessions complete.</p></div><div class="alert-time">Today</div></div>
+        <div class="alert-item"><div class="alert-icon-circle violet">🤖</div><div class="alert-content"><h4>AI Plan Update Available</h4><p>Based on last 7 days, AI has generated an improved schedule. Your optimal deep work window has shifted to 6:30–8:30 AM.</p></div><div class="alert-time">Yesterday</div></div>
+        <div class="alert-item"><div class="alert-icon-circle orange">📱</div><div class="alert-content"><h4>Instagram Daily Limit Reached (10/10)</h4><p>You've used your 10 allowed Instagram checks for today. App blocked until 6 PM. Great self-control!</p></div><div class="alert-time">5h ago</div></div>
+      </div>
+    </div>
+
+    <!-- SETTINGS PAGE -->
+    <div class="dash-main-page" id="dash-settings">
+      <div class="dash-header"><div class="dash-header-text"><h1>Settings ⚙️</h1><p>Customize your FocusBharat experience</p></div></div>
+      <div class="settings-grid">
+        <div class="settings-section"><h3>🔔 Notification Preferences</h3>
+          <div class="setting-row"><div class="setting-label">Focus Session Reminders<span>Alert 5 mins before scheduled focus blocks</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Distraction Alerts<span>Warn when opening blocked apps during focus time</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Daily Summary<span>Evening recap of focus score and achievements</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Streak Celebrations<span>Celebrate focus streaks and milestones</span></div><label class="toggle"><input type="checkbox"><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">AI Plan Updates<span>Notify when AI updates your schedule</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+        </div>
+        <div class="settings-section"><h3>🤖 AI &amp; Analysis</h3>
+          <div class="setting-row"><div class="setting-label">Auto Plan Updates<span>Let AI automatically adjust your daily schedule</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Behavioral Analysis<span>Track app usage for personalized insights</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Smart App Blocking<span>AI automatically blocks distractions during focus time</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Weekly AI Reports<span>Detailed performance report every Sunday</span></div><label class="toggle"><input type="checkbox"><div class="toggle-slider"></div></label></div>
+        </div>
+        <div class="settings-section"><h3>👤 Profile &amp; Goals</h3>
+          <div class="form-group"><label class="form-label">Display Name</label><input type="text" class="form-input" value="Priya Sharma"></div>
+          <div class="form-group"><label class="form-label">Current Goal</label><select class="form-input"><option selected>JEE / Engineering Entrance</option><option>NEET / Medical</option><option>UPSC</option><option>Board Exams</option></select></div>
+          <div class="form-group"><label class="form-label">Daily Study Target</label><select class="form-input"><option>4 hours</option><option selected>6 hours</option><option>8 hours</option></select></div>
+          <button class="btn btn-primary" style="margin-top:0.5rem" onclick="showToast('Profile updated successfully!','success')">Save Changes</button>
+        </div>
+        <div class="settings-section"><h3>🎨 Display Preferences</h3>
+          <div class="setting-row"><div class="setting-label">Dark Mode<span>FocusBharat looks best in dark mode</span></div><label class="toggle"><input type="checkbox" checked><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Reduced Animations<span>Minimize motion effects for better performance</span></div><label class="toggle"><input type="checkbox"><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Compact Dashboard<span>Show more data in less space</span></div><label class="toggle"><input type="checkbox"><div class="toggle-slider"></div></label></div>
+          <div class="setting-row"><div class="setting-label">Sound Effects<span>Play sounds for focus sessions and alerts</span></div><label class="toggle"><input type="checkbox"><div class="toggle-slider"></div></label></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FEEDBACK PAGE -->
+    <div class="dash-main-page" id="dash-feedback">
+      <div class="dash-header"><div class="dash-header-text"><h1>Share Feedback 💬</h1><p>Help us improve FocusBharat for Indian students</p></div></div>
+      <div style="max-width:600px">
+        <div class="dash-chart-card" style="padding:2rem">
+          <h3 style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--white);margin-bottom:1.5rem">How's your experience so far?</h3>
+          <div style="display:flex;gap:1rem;margin-bottom:2rem;flex-wrap:wrap">
+            <button onclick="selectRating(this,5)" style="padding:0.6rem 1.1rem;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--white);font-size:1.2rem;cursor:pointer;transition:all 0.2s">😍 Amazing</button>
+            <button onclick="selectRating(this,4)" style="padding:0.6rem 1.1rem;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--white);font-size:1.2rem;cursor:pointer;transition:all 0.2s">😊 Good</button>
+            <button onclick="selectRating(this,3)" style="padding:0.6rem 1.1rem;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--white);font-size:1.2rem;cursor:pointer;transition:all 0.2s">😐 Okay</button>
+            <button onclick="selectRating(this,2)" style="padding:0.6rem 1.1rem;border-radius:10px;background:rgba(255,255,255,0.05);border:1px solid var(--border);color:var(--white);font-size:1.2rem;cursor:pointer;transition:all 0.2s">😕 Needs Work</button>
+          </div>
+          <div class="form-group"><label class="form-label">What's working well for you?</label><textarea class="form-input" rows="3" placeholder="e.g. The AI recommendations are really accurate..."></textarea></div>
+          <div class="form-group"><label class="form-label">What could be better?</label><textarea class="form-input" rows="3" placeholder="e.g. I'd love a Pomodoro timer built into the dashboard..."></textarea></div>
+          <div class="form-group"><label class="form-label">Feature Requests</label><input type="text" class="form-input" placeholder="e.g. Calendar integration, WhatsApp blocking..."></div>
+          <button class="btn btn-primary" onclick="showToast('Thank you for your feedback! Our team will review it.','success')">Submit Feedback ✓</button>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- ═══════════════════════════════════
+     JAVASCRIPT — load order matters
+═══════════════════════════════════ -->
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/onboarding.js"></script>
+<script src="js/ai-loading.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

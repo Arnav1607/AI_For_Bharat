@@ -1,0 +1,17 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- Brain/AI Symbol -->
+  <circle cx="50" cy="40" r="30" fill="url(#grad1)"/>
+  <path d="M 35 35 Q 50 20 65 35" stroke="white" stroke-width="3" fill="none"/>
+  <path d="M 35 45 Q 50 30 65 45" stroke="white" stroke-width="3" fill="none"/>
+  <!-- India Flag Colors (subtle) -->
+  <rect x="35" y="70" width="10" height="3" fill="#ff9933"/>
+  <rect x="45" y="70" width="10" height="3" fill="white"/>
+  <rect x="55" y="70" width="10" height="3" fill="#138808"/>
+  <circle cx="50" cy="71.5" r="1.5" fill="#000080"/>
+</svg>
