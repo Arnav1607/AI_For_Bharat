@@ -131,3 +131,8 @@ Open with VS Code Live Server on port 5501 (configured in `.vscode/settings.json
 <img width="1920" height="1080" alt="Screenshot 2026-02-28 144617" src="https://github.com/user-attachments/assets/345ad3f0-f6a6-4a79-8c5a-6e8f2ccfebf5" />
 <img width="1920" height="1080" alt="Screenshot 2026-02-28 144639" src="https://github.com/user-attachments/assets/c288518c-3578-4dbb-ab35-9cbfc0c15c9d" />
 <img width="1920" height="1080" alt="Screenshot 2026-02-28 144649" src="https://github.com/user-attachments/assets/b5b34f7b-fa49-4128-8b7c-638ab59f44c5" />
+
+## Video Explanation 
+
+
+https://github.com/user-attachments/assets/d2b17e89-48d9-4c3f-9ec0-ecaa10f084fa
